@@ -19,7 +19,32 @@ input#searchBar {
     margin-top: 10px;
     font-size: 16px;
 }
-
+.floating-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: linear-gradient(45deg, #6a11cb, #2575fc); /* Degradado */
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    z-index: 1000;
+    display: none;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  
+  .floating-button:hover {
+    transform: scale(1.1); /* Efecto de zoom */
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3);
+  }
+  
 
 nav {
     margin: 20px;
@@ -40,13 +65,19 @@ nav ul li a {
     color: #2980b9;
     text-decoration: none;
 }
+a{
+    text-decoration: none;
+    color: black;
 
+}
 h2 {
     color: #34495e;
     text-align: center;
     margin-top: 40px;
 }
-
+#canciones_nuevas{
+    color: red;
+}
 section#songList {
     margin: 20px;
 }
