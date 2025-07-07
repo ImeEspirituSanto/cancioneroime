@@ -93,14 +93,14 @@ section#songList {
 }
 
 .lyrics {
-  font-family: monospace;
+  font-family: 25px;
   white-space: pre-wrap;
 }
 
 .chorus {
   font-weight: bold;
   color: red;
-  font-size: 1.1em;
+  font-size: 1.5em;
 }
 /* Estilos generales */
 /* Estilos generales para el texto de las canciones */
