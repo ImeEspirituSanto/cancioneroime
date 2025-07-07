@@ -202,7 +202,7 @@ strong.chorus {
 @media (max-width: 768px) {
   div.lyrics,
   p.lyrics {
-    font-size: 1.5em; /* Reduce el tamaño de la fuente en móviles */
+    font-size: 1em; /* Reduce el tamaño de la fuente en móviles */
   }
   nav ul li {
     display: inline-block;
@@ -220,7 +220,7 @@ article.song h3 {
 /* Estilos para pantallas pequeñas */
 @media (max-width: 768px) {
   .lyrics {
-    font-size: 1.5em; /* Reduce el tamaño de la fuente en móviles */
+    font-size: 1em; /* Reduce el tamaño de la fuente en móviles */
     padding: 8px;
     white-space: pre-wrap; /* Asegura que el texto se ajuste correctamente */
     word-wrap: break-word; /* Rompe las palabras largas si es necesario */
