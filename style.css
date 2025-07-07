@@ -93,7 +93,7 @@ section#songList {
 }
 
 .lyrics {
-  font-family: 1.6em;
+  font-family: 1.7em;
   white-space: pre-wrap;
 }
 
@@ -108,7 +108,7 @@ section#songList {
 div.lyrics,
 p.lyrics {
   font-family: Arial, sans-serif; /* Usa una fuente legible */
-  font-size: 1.6em; /* Tamaño de fuente cómodo */
+  font-size: 1.7em; /* Tamaño de fuente cómodo */
   line-height: 1.6; /* Espacio entre líneas */
   white-space: normal; /* Permite ajuste de texto automático */
   word-wrap: break-word; /* Rompe las palabras largas si es necesario */
