@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
 function scrollToTop() {
   const nav = document.querySelector("header");
   if (nav) {
-    nav.scrollIntoView({ behavior: "smooth" });
+    nav.scrollIntoView({ behavior: "auto" });
   }
 }
 
