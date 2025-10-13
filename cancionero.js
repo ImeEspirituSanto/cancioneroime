@@ -177,6 +177,20 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
+document.addEventListener("DOMContentLoaded", () => {
+  // Detectar si estamos en favoritos.html
+  if (window.location.pathname.includes("favoritos.html")) {
+    const contenedor = document.getElementById("favoritosContainer");
+    let favoritos = JSON.parse(localStorage.getItem("favoritos")) || [];
+
+    if (favoritos.length === 0) {
+      contenedor.innerHTML = "<p>No hay canciones favoritas aún ❤️</p>";
+      return;
+    }
+
+    favoritos.forEach(fav => {
+      const article = document.createElement("article");
+      article.className = "song";
  // Crear el botón de eliminar (❌)
       const deleteBtn = document.createElement("button");
       deleteBtn.className = "delete-btn";
