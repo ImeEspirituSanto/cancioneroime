@@ -172,9 +172,6 @@ document.addEventListener("DOMContentLoaded", () => {
      article.innerHTML = `
       <h3>${fav.titulo}</h3>
       <div class="lyrics">${fav.letra || "Letra no disponible"}</div>
-      <a href="${fav.deidad}.html#${fav.id.split('-')[1]}" class="song-link">
-     Ir a la canción
-  </a>
 `;
  contenedor.appendChild(article);
     });
@@ -210,15 +207,11 @@ document.addEventListener("DOMContentLoaded", () => {
       const titulo = document.createElement("h3");
       titulo.textContent = fav.titulo;
 
-      const link = document.createElement("a");
-      link.href = `${fav.deidad}.html#${fav.id.split('-')[1]}`;
-      link.className = "song-link";
-      link.textContent = "Ir a la canción";
+     
 
       // Agregar todo al artículo
       article.appendChild(deleteBtn);
       article.appendChild(titulo);
-      article.appendChild(link);
       contenedor.appendChild(article);
 
       // Evento para eliminar el favorito
