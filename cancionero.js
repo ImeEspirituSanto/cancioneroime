@@ -101,5 +101,57 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
+document.addEventListener("DOMContentLoaded", () => {
+  // Identificá la deidad según el archivo actual
+  // Por ejemplo, si estás en jesus.html:
+  const deidad = window.location.pathname.includes("jesus") ? "jesus" :
+                 window.location.pathname.includes("diospadre") ? "diospadre" :
+                 window.location.pathname.includes("espiritusanto") ? "espiritusanto" :
+                 "otros";
+
+  // Obtenemos favoritos actuales del localStorage
+  let favoritos = JSON.parse(localStorage.getItem("favoritos")) || [];
+
+  // Función para chequear si una canción ya está en favoritos
+  const estaEnFavoritos = (id) => favoritos.some(fav => fav.id === id);
+
+  // Recorrer todas las canciones
+  document.querySelectorAll("article.song").forEach(article => {
+    const numero = article.id; // Usamos el id del article
+    const titulo = article.querySelector("h3").innerText;
+    const idUnico = `${deidad}-${numero}`;
+
+    // Crear el botón corazón
+    const heartBtn = document.createElement("button");
+    heartBtn.className = "heart-btn";
+    heartBtn.innerHTML = "&#10084;"; // corazón
+    heartBtn.style.cursor = "pointer";
+    heartBtn.style.fontSize = "20px";
+    heartBtn.style.border = "none";
+    heartBtn.style.background = "none";
+    heartBtn.style.marginLeft = "10px";
+
+    // Pintar según esté en favoritos
+    heartBtn.style.color = estaEnFavoritos(idUnico) ? "red" : "grey";
+
+    // Agregar al final del artículo
+    article.appendChild(heartBtn);
+
+    // Evento click
+    heartBtn.addEventListener("click", () => {
+      if (estaEnFavoritos(idUnico)) {
+        // Quitar de favoritos
+        favoritos = favoritos.filter(fav => fav.id !== idUnico);
+        heartBtn.style.color = "grey";
+      } else {
+        // Agregar a favoritos
+        favoritos.push({ id: idUnico, titulo, deidad });
+        heartBtn.style.color = "red";
+      }
+      localStorage.setItem("favoritos", JSON.stringify(favoritos));
+    });
+  });
+});
+
 
 
