@@ -197,6 +197,10 @@ strong.chorus {
 .boton:hover {
   background-color: #a2cadf; /* Color cuando el ratón pasa por encima */
 }
+.heart-btn:hover {
+  transform: scale(1.2);
+  transition: transform 0.2s ease;
+}
 
 /* Estilos para pantallas pequeñas */
 @media (max-width: 768px) {
