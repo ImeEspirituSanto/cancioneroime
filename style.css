@@ -201,6 +201,11 @@ strong.chorus {
   transform: scale(1.2);
   transition: transform 0.2s ease;
 }
+.delete-btn:hover {
+  transform: scale(1.2);
+  color: red;
+  transition: all 0.2s ease;
+}
 
 /* Estilos para pantallas pequeñas */
 @media (max-width: 768px) {
