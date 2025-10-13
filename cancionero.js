@@ -104,9 +104,9 @@ document.addEventListener("DOMContentLoaded", () => {
 document.addEventListener("DOMContentLoaded", () => {
   // Identificá la deidad según el archivo actual
   // Por ejemplo, si estás en jesus.html:
-  const deidad = window.location.pathname.includes("jesus") ? "jesus" :
-                 window.location.pathname.includes("diospadre") ? "diospadre" :
-                 window.location.pathname.includes("espiritusanto") ? "espiritusanto" :
+  const deidad = window.location.href.includes("jesus") ? "jesus" :
+                 window.location.href.includes("diospadre") ? "diospadre" :
+                 window.location.href.includes("espiritusanto") ? "espiritusanto" :
                  "otros";
 
   // Obtenemos favoritos actuales del localStorage
