@@ -97,7 +97,7 @@ document.addEventListener("DOMContentLoaded", () => {
           top: 150, // cantidad de píxeles que baja cada vez
           behavior: "smooth"
         });
-      }, 30000); // cada 10 segundos
+      }, 25000); // cada 10 segundos
     }
   });
 });
