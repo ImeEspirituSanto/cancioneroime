@@ -42,5 +42,64 @@ function scrollToTop() {
     nav.scrollIntoView({ behavior: "auto" });
   }
 }
+document.addEventListener("DOMContentLoaded", () => {
+  // Crear el botón dinámicamente
+  const scrollBtn = document.createElement("button");
+  scrollBtn.id = "autoScrollBtn";
+  scrollBtn.title = "Activar desplazamiento automático";
+  scrollBtn.innerHTML = "&#x25BC;"; // Flecha hacia abajo
+
+  // Estilos del botón
+  Object.assign(scrollBtn.style, {
+    position: "fixed",
+    top: "80px",
+    right: "20px",
+    backgroundColor: "#c0392b", // rojo inactivo
+    color: "white",
+    border: "none",
+    borderRadius: "50%",
+    width: "45px",
+    height: "45px",
+    fontSize: "22px",
+    cursor: "pointer",
+    boxShadow: "0 2px 8px rgba(0, 0, 0, 0.3)",
+    transition: "background-color 0.3s ease, transform 0.2s ease",
+    zIndex: "1000",
+  });
+
+  // Animación de hover
+  scrollBtn.addEventListener("mouseenter", () => {
+    scrollBtn.style.transform = "scale(1.1)";
+  });
+  scrollBtn.addEventListener("mouseleave", () => {
+    scrollBtn.style.transform = "scale(1)";
+  });
+
+  // Agregar el botón al body
+  document.body.appendChild(scrollBtn);
+
+  // --- Lógica del autoscroll ---
+  let autoScrollInterval = null;
+
+  scrollBtn.addEventListener("click", () => {
+    if (autoScrollInterval) {
+      // Si ya está activo, lo detenemos
+      clearInterval(autoScrollInterval);
+      autoScrollInterval = null;
+      scrollBtn.style.backgroundColor = "#c0392b"; // rojo inactivo
+      scrollBtn.title = "Activar desplazamiento automático";
+    } else {
+      // Si está inactivo, lo activamos
+      scrollBtn.style.backgroundColor = "#27ae60"; // verde activo
+      scrollBtn.title = "Desactivar desplazamiento automático";
+      autoScrollInterval = setInterval(() => {
+        window.scrollBy({
+          top: 150, // cantidad de píxeles que baja cada vez
+          behavior: "smooth"
+        });
+      }, 10000); // cada 10 segundos
+    }
+  });
+});
 
 
