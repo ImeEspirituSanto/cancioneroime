@@ -1,4 +1,5 @@
-document.getElementById("searchBar").addEventListener("input", function () {
+window.addEventListener("load", () => {
+  document.getElementById("searchBar").addEventListener("input", function () {
   let query = this.value.toLowerCase();
   let songs = document.querySelectorAll(".song");
  
@@ -234,4 +235,8 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
+
+
+  // todo tu código actual del cancionero y de favoritos va acá
+});
 
