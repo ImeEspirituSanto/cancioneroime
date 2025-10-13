@@ -153,5 +153,30 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
+document.addEventListener("DOMContentLoaded", () => {
+  // Detectar si estamos en favoritos.html
+  if (window.location.pathname.includes("favoritos.html")) {
+    const contenedor = document.getElementById("favoritosContainer");
+    const favoritos = JSON.parse(localStorage.getItem("favoritos")) || [];
+
+    if (favoritos.length === 0) {
+      contenedor.innerHTML = "<p>No hay canciones favoritas aún ❤️</p>";
+      return;
+    }
+
+    favoritos.forEach(fav => {
+      // Crear un contenedor similar al de tus canciones
+      const article = document.createElement("article");
+      article.className = "song";
+      article.innerHTML = `
+        <h3>${fav.titulo}</h3>
+        <a href="${fav.deidad}.html#${fav.id.split('-')[1]}" class="song-link">
+          Ir a la canción
+        </a>
+      `;
+      contenedor.appendChild(article);
+    });
+  }
+});
 
 
