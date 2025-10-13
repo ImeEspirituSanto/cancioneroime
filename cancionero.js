@@ -178,5 +178,60 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
+document.addEventListener("DOMContentLoaded", () => {
+  // Detectar si estamos en favoritos.html
+  if (window.location.pathname.includes("favoritos.html")) {
+    const contenedor = document.getElementById("favoritosContainer");
+    let favoritos = JSON.parse(localStorage.getItem("favoritos")) || [];
+
+    if (favoritos.length === 0) {
+      contenedor.innerHTML = "<p>No hay canciones favoritas aún ❤️</p>";
+      return;
+    }
+
+    favoritos.forEach(fav => {
+      const article = document.createElement("article");
+      article.className = "song";
+
+      // Crear el botón de eliminar (❌)
+      const deleteBtn = document.createElement("button");
+      deleteBtn.className = "delete-btn";
+      deleteBtn.innerHTML = "❌";
+      deleteBtn.style.cursor = "pointer";
+      deleteBtn.style.border = "none";
+      deleteBtn.style.background = "none";
+      deleteBtn.style.fontSize = "18px";
+      deleteBtn.style.float = "right";
+      deleteBtn.title = "Quitar de favoritos";
+
+      // Título y enlace a la canción
+      const titulo = document.createElement("h3");
+      titulo.textContent = fav.titulo;
+
+      const link = document.createElement("a");
+      link.href = `${fav.deidad}.html#${fav.id.split('-')[1]}`;
+      link.className = "song-link";
+      link.textContent = "Ir a la canción";
+
+      // Agregar todo al artículo
+      article.appendChild(deleteBtn);
+      article.appendChild(titulo);
+      article.appendChild(link);
+      contenedor.appendChild(article);
+
+      // Evento para eliminar el favorito
+      deleteBtn.addEventListener("click", () => {
+        favoritos = favoritos.filter(f => f.id !== fav.id);
+        localStorage.setItem("favoritos", JSON.stringify(favoritos));
+        article.remove();
+
+        // Si se vacía la lista, mostramos mensaje
+        if (favoritos.length === 0) {
+          contenedor.innerHTML = "<p>No hay canciones favoritas aún ❤️</p>";
+        }
+      });
+    });
+  }
+});
 
 
