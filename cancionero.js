@@ -145,7 +145,8 @@ document.addEventListener("DOMContentLoaded", () => {
         heartBtn.style.color = "grey";
       } else {
         // Agregar a favoritos
-        favoritos.push({ id: idUnico, titulo, deidad });
+        const letra = article.querySelector(".lyrics")?.innerHTML || "";
+        favoritos.push({ id: idUnico, titulo, deidad, letra });
         heartBtn.style.color = "red";
       }
       localStorage.setItem("favoritos", JSON.stringify(favoritos));
@@ -168,13 +169,14 @@ document.addEventListener("DOMContentLoaded", () => {
       // Crear un contenedor similar al de tus canciones
       const article = document.createElement("article");
       article.className = "song";
-      article.innerHTML = `
-        <h3>${fav.titulo}</h3>
-        <a href="${fav.deidad}.html#${fav.id.split('-')[1]}" class="song-link">
-          Ir a la canción
-        </a>
-      `;
-      contenedor.appendChild(article);
+     article.innerHTML = `
+      <h3>${fav.titulo}</h3>
+      <div class="lyrics">${fav.letra || "Letra no disponible"}</div>
+      <a href="${fav.deidad}.html#${fav.id.split('-')[1]}" class="song-link">
+     Ir a la canción
+  </a>
+`;
+ contenedor.appendChild(article);
     });
   }
 });
