@@ -174,7 +174,7 @@ document.addEventListener("DOMContentLoaded", () => {
   <div class="lyrics">
     ${fav.letra}
   </div>
-  ${fav.audio_src ? `<audio class="song-link" controls src="${fav.audio_src}"></audio>` : ""}
+  <audio class="song-link" controls src="${fav.audio_src}"></audio> : ""}
 `;
 
  contenedor.appendChild(article);
