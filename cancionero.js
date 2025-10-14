@@ -120,6 +120,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const numero = article.id; // Usamos el id del article
     const titulo = article.querySelector("h3").innerText;
     const idUnico = `${deidad}-${numero}`;
+    const audio_src = article.querySelector("audio").src;
+
 
     // Crear el botón corazón
     const heartBtn = document.createElement("button");
