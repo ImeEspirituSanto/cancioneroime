@@ -163,7 +163,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const favoritos = JSON.parse(localStorage.getItem("favoritos")) || [];
 
     if (favoritos.length === 0) {
-      contenedor.innerHTML = "<p>No hay canciones favoritas aún ❤️</p>";
+      contenedor.innerHTML = "<p>No hay canciones favoritas aún... ❤️</p>";
       return;
     }
 
