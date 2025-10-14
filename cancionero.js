@@ -146,7 +146,7 @@ document.addEventListener("DOMContentLoaded", () => {
       } else {
         // Agregar a favoritos
         const letra = article.querySelector(".lyrics")?.innerHTML || "";
-        favoritos.push({ id: idUnico, titulo, deidad, letra });
+        favoritos.push({ id: idUnico, titulo, deidad, letra, audio_src });
         heartBtn.style.color = "red";
       }
       localStorage.setItem("favoritos", JSON.stringify(favoritos));
