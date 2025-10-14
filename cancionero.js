@@ -165,22 +165,27 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
+    // Limpiar contenedor antes de agregar canciones
+    contenedor.innerHTML = "";
+
     favoritos.forEach(fav => {
       // Crear un contenedor similar al de tus canciones
       const article = document.createElement("article");
       article.className = "song";
-    article.innerHTML = `
-  <h3>${fav.titulo}</h3>
-  <div class="lyrics">
-    ${fav.letra}
-  </div>
-  <audio class="song-link" controls src="${fav.audio_src}"></audio>
-`;
+      
+      article.innerHTML = `
+        <h3>${fav.titulo}</h3>
+        <div class="lyrics">
+          ${fav.letra}
+        </div>
+        ${fav.audio_src ? `<audio class="song-link" controls src="${fav.audio_src}"></audio>` : ""}
+     `;
 
- contenedor.appendChild(article);
+      contenedor.appendChild(article);
     });
   }
 });
+
 document.addEventListener("DOMContentLoaded", () => {
   // Detectar si estamos en favoritos.html
   if (window.location.pathname.includes("favoritos.html")) {
