@@ -203,7 +203,9 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       }
     });
-document.addEventListener("DOMContentLoaded", () => {
+  } // <-- cierre del primer if
+
+  // Aquí va el navToggle sin abrir otro DOMContentLoaded
   const navToggle = document.getElementById("navToggle");
   const navMenu = document.getElementById("navMenu");
 
@@ -222,7 +224,8 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     });
   }
-});
+}); // <-- cierre correcto del DOMContentLoaded
+
 
 
 
