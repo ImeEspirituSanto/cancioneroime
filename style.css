@@ -388,7 +388,7 @@ strong.chorus {
   p.lyrics {
     font-size: 20px; /* Reduce el tamaño de la fuente en móviles */
   }
-  .nav-toggle {
+    .nav-toggle {
     display: block;
   }
 
@@ -398,6 +398,14 @@ strong.chorus {
     align-items: flex-start;
     background: #222;
     width: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    position: absolute;
+    left: 0;
+    top: 60px; /* ajustá según la altura de tu header */
+    overflow-x: hidden;
+    z-index: 1000;
   }
 
   .menu.active {
@@ -406,12 +414,20 @@ strong.chorus {
 
   .menu > li {
     width: 100%;
+    list-style: none;
   }
 
   .menu > li > a {
     width: 100%;
     padding: 12px 20px;
     border-bottom: 1px solid #333;
+    color: white;
+    display: block;
+    text-align: left;
+  }
+
+  .menu > li > a:hover {
+    background-color: #333;
   }
 
   .dropdown-menu {
@@ -421,11 +437,11 @@ strong.chorus {
   }
 
   .dropdown:hover .dropdown-menu {
-    display: none; /* evitar hover en móvil */
+    display: none; /* evita abrir por hover en móvil */
   }
 
   .dropdown.active .dropdown-menu {
-    display: block; /* abrir tocando */
+    display: block; /* se abre tocando */
   }
 }
 
