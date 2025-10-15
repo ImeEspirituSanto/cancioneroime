@@ -332,6 +332,41 @@ strong.chorus {
   position: relative;
   padding-top: 2em;
 }
+.indice-letras ul {
+  display: flex;
+  flex-wrap: wrap; /* se adapta en móvil */
+  gap: 10px;
+  padding: 0;
+  margin: 10px 0;
+  list-style: none;
+  justify-content: center; /* centrado horizontal */
+}
+
+.indice-letras li a {
+  display: inline-block;
+  padding: 8px 12px;
+  font-size: 1.1em;
+  font-weight: bold;
+  text-decoration: none;
+  color: #1f2937; /* gris oscuro */
+  background: #f3f4f6; /* gris claro */
+  border-radius: 6px;
+  transition: background 0.2s, color 0.2s;
+}
+
+.indice-letras li a:hover {
+  background: #3b82f6; /* azul hover */
+  color: white;
+}
+
+.indice-letras li a.especial {
+  background: #f87171; /* rojo para Eucarísticos y C.Nuevas */
+  color: white;
+}
+
+.indice-letras li a.especial:hover {
+  background: #ef4444;
+}
 
 /* Estilos para pantallas pequeñas */
 @media (max-width: 768px) {
