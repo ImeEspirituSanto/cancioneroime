@@ -2,7 +2,7 @@ body {
   font-family: Arial, sans-serif;
   background-color: #f7f7f7;
   margin: 0;
-  padding: 0;
+  padding-top: 60px;
 }
 
 header {
@@ -45,13 +45,14 @@ input#searchBar {
   box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3);
 }
 
-.navbar {
-  background: #222;
-  font-family: sans-serif;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.3);
-  position: sticky;
-  top: 0;
-  z-index: 1000;
+nav.navbar {
+  position: fixed;   /* fija el nav en la pantalla */
+  top: 0;            /* arriba de todo */
+  left: 0;
+  width: 100%;       /* que ocupe todo el ancho */
+  z-index: 1000;     /* que esté por encima de otros elementos */
+  background-color: #ffffff; /* fondo sólido para que no se vea transparente */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* sutil sombra */
 }
 
 .nav-header {
