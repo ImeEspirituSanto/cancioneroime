@@ -355,13 +355,13 @@ strong.chorus {
 }
 
 .indice-letras li a:hover {
-  background: #3b82f6; /* azul hover */
+  background: #0000ff; /* azul hover */
   color: white;
 }
 
 .indice-letras li a.especial {
   background: #ADD8E6; /* rojo para Eucarísticos y C.Nuevas */
-  color: white;
+  color: black;
 }
 
 .indice-letras li a.especial:hover {
