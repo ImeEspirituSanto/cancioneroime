@@ -77,6 +77,11 @@ nav.navbar {
   cursor: pointer;
   display: none; /* solo se muestra en móviles */
 }
+nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* o space-around */
+}
 
 .menu {
   display: flex;
