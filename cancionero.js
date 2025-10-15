@@ -203,6 +203,26 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       }
     });
+    document.addEventListener("DOMContentLoaded", () => {
+  const navToggle = document.getElementById("navToggle");
+  const navMenu = document.getElementById("navMenu");
+
+  if (navToggle && navMenu) {
+    navToggle.addEventListener("click", () => {
+      navMenu.classList.toggle("active");
+    });
+
+    // Para que los dropdowns se abran tocando en móvil
+    document.querySelectorAll(".dropdown > a").forEach(link => {
+      link.addEventListener("click", (e) => {
+        if (window.innerWidth <= 768) {
+          e.preventDefault();
+          link.parentElement.classList.toggle("active");
+        }
+      });
+    });
+  }
+});
   }
 });
 
