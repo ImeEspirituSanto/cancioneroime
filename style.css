@@ -206,6 +206,30 @@ strong.chorus {
   color: red;
   transition: all 0.2s ease;
 }
+.remove-fav {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  background: none;
+  border: none;
+  color: #ff0000; /* 🔴 Rojo fuerte por defecto */
+  font-size: 1.4em;
+  cursor: pointer;
+  font-weight: bold;
+  transition: transform 0.2s, color 0.2s;
+  z-index: 10;
+}
+
+.remove-fav:hover {
+  transform: scale(1.2);
+  color: #b30000; /* Un rojo más oscuro al pasar el mouse */
+}
+
+/* Aseguramos que el botón se posicione bien dentro del artículo */
+.song {
+  position: relative;
+  padding-top: 2em;
+}
 
 /* Estilos para pantallas pequeñas */
 @media (max-width: 768px) {
