@@ -6,7 +6,7 @@ window.addEventListener("scroll", () => {
   
   if (currentScroll > lastScroll) {
     // Scroll hacia abajo → ocultar nav
-    nav.style.top = "-70px"; // ajustar según altura del nav
+    nav.style.top = "-80px"; // ajustar según altura del nav
   } else {
     // Scroll hacia arriba → mostrar nav
     nav.style.top = "0";
