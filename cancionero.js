@@ -179,9 +179,6 @@ document.addEventListener("DOMContentLoaded", () => {
         <h3>${fav.titulo}</h3>
         <div class="lyrics">${fav.letra}</div>
         ${fav.audio_src ? `<audio class="song-link" controls src="${fav.audio_src}"></audio>` : ""}
-        <a href="${fav.deidad}.html#${fav.id.split('-')[1]}" class="song-link">
-          Ir a la canción
-        </a>
       `;
 
       contenedor.appendChild(article);
