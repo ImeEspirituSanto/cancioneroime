@@ -39,9 +39,14 @@ document.addEventListener("DOMContentLoaded", () => {
 function scrollToTop() {
   const nav = document.querySelector("header");
   if (nav) {
-    nav.scrollIntoView({ behavior: "auto" });
+    const navTop = nav.getBoundingClientRect().top + window.pageYOffset;
+    window.scrollTo({
+      top: navTop, // posición exacta del nav
+      behavior: "auto" // desplazamiento suave
+    });
   }
 }
+
 document.addEventListener("DOMContentLoaded", () => {
   // Crear el botón dinámicamente
   const scrollBtn = document.createElement("button");
