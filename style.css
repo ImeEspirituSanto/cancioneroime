@@ -145,6 +145,30 @@ input#searchBar {
 .destacado:hover {
   background: #ff7777;
 }
+/* Colores personalizados para accesos directos */
+.destacado.azul {
+  background: #3b82f6; /* azul brillante */
+}
+
+.destacado.azul:hover {
+  background: #60a5fa;
+}
+
+.destacado.rojo {
+  background: #ef4444; /* rojo cálido */
+}
+
+.destacado.rojo:hover {
+  background: #f87171;
+}
+
+.destacado.verde {
+  background: #22c55e; /* verde esperanza */
+}
+
+.destacado.verde:hover {
+  background: #4ade80;
+}
 
 h2 {
   color: #34495e;
