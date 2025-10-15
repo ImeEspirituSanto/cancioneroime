@@ -360,12 +360,12 @@ strong.chorus {
 }
 
 .indice-letras li a.especial {
-  background: #0000ff; 
+  background: #00BFFF; 
   color: black;
 }
 
 .indice-letras li a.especial:hover {
-  background: #ef4444;
+  background: #0000ff;
 }
 .favoritos-vacio {
   font-family: "Arial Black", Arial, sans-serif;
