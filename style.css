@@ -381,7 +381,7 @@ strong.chorus {
   text-align: center;
   margin: 40px 0;
 }
-
+#simbAudio{ text-align: center;}
 /* Estilos para pantallas pequeñas */
 @media (max-width: 768px) {
   div.lyrics,
@@ -450,7 +450,7 @@ article.song h3 {
   margin-bottom: 5px; /* Espacio reducido entre título y letra */
   padding: 0;
 }
-#simbAudio{ text-aling: center;}
+
 /* Estilos para pantallas pequeñas */
 @media (max-width: 768px) {
   .lyrics {
