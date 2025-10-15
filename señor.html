@@ -13,30 +13,53 @@
       <input type="text" id="searchBar" placeholder="Buscar canción..." />
     </header>
 
-    <nav>
-      <ul>
-        <li><a href="señor.html">Coritos al Señor</a></li>
-        <li><a href="jesus.html">Coritos a Jesús</a></li>
-        <li><a href="index.html">Coritos al Espíritu Santo</a></li>
-        <li><a href="himnos-señor.html">Himnos al Señor</a></li>
-        <li><a href="padre.html">Himnos al Padre</a></li>
-        <li><a href="himnos-jesus.html">Himnos a Jesús</a></li>
-        <li><a href="himnos-espiritu.html">Himnos al Espíritu Santo</a></li>
-        <li><a href="maria.html">Virgen María</a></li>
-        <li><a href="eucaristico.html">Eucaristicos</a></li>
-        <li><a href="liturgico.html">Liturgicos</a></li>
-        <li><a href="perdon.html">Himnos de Perdon</a></li>
-        <li><a href="navideños.html">Navideños</a></li>
-        <li>
-          <a href="canciones_nuevas.html" id="canciones_nuevas"
-            >Canciones Nuevas</a
-          >
-        </li>
-        <li><a href="rezos.html">Rezos</a></li>
-        <li><a href="favoritos.html">FAVORITOS</a></li>
-        <li><a href="indice.html">INDICE</a></li>
+    <nav class="navbar">
+  <div class="nav-header">
+    <button class="nav-toggle" id="navToggle">☰</button>
+    <span class="nav-title">Cancionero</span>
+  </div>
+
+  <ul class="menu" id="navMenu">
+    <!-- Grupo CORITOS -->
+    <li class="dropdown">
+      <a href="#">Coritos ▾</a>
+      <ul class="dropdown-menu">
+        <li><a href="señor.html">Al Señor</a></li>
+        <li><a href="jesus.html">A Jesús</a></li>
+        <li><a href="index.html">Al Espíritu Santo</a></li>
       </ul>
-    </nav>
+    </li>
+
+    <!-- Grupo HIMNOS -->
+    <li class="dropdown">
+      <a href="#">Himnos ▾</a>
+      <ul class="dropdown-menu">
+        <li><a href="himnos-señor.html">Al Señor</a></li>
+        <li><a href="padre.html">Al Padre</a></li>
+        <li><a href="himnos-jesus.html">A Jesús</a></li>
+        <li><a href="himnos-espiritu.html">Al Espíritu Santo</a></li>
+        <li><a href="perdon.html">De Perdón</a></li>
+        <li><a href="navideños.html">Navideños</a></li>
+      </ul>
+    </li>
+
+    <!-- Grupo OTROS -->
+    <li class="dropdown">
+      <a href="#">Otros ▾</a>
+      <ul class="dropdown-menu">
+        <li><a href="maria.html">Virgen María</a></li>
+        <li><a href="eucaristico.html">Eucarísticos</a></li>
+        <li><a href="liturgico.html">Litúrgicos</a></li>
+        <li><a href="rezos.html">Rezos</a></li>
+      </ul>
+    </li>
+
+    <!-- ACCESOS DIRECTOS CON COLORES -->
+    <li><a href="canciones_nuevas.html" class="destacado azul">🎼 Canciones Nuevas</a></li>
+    <li><a href="favoritos.html" class="destacado rojo">❤️ Favoritos</a></li>
+    <li><a href="indice.html" class="destacado verde">📖 Índice</a></li>
+  </ul>
+</nav>
    
     <section id="songList">
       <h2 id="padre">Coritos al Señor</h2>
