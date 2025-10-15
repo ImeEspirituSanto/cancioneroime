@@ -1,4 +1,21 @@
-  document.getElementById("searchBar").addEventListener("input", function () {
+let lastScroll = 0;
+const nav = document.querySelector("nav.navbar");
+
+window.addEventListener("scroll", () => {
+  const currentScroll = window.pageYOffset;
+  
+  if (currentScroll > lastScroll) {
+    // Scroll hacia abajo → ocultar nav
+    nav.style.top = "-70px"; // ajustar según altura del nav
+  } else {
+    // Scroll hacia arriba → mostrar nav
+    nav.style.top = "0";
+  }
+  
+  lastScroll = currentScroll;
+});
+
+document.getElementById("searchBar").addEventListener("input", function () {
   let query = this.value.toLowerCase();
   let songs = document.querySelectorAll(".song");
  
