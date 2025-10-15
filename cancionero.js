@@ -189,7 +189,6 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 document.addEventListener("DOMContentLoaded", () => {
-  // Detectar si estamos en favoritos.html
   if (window.location.pathname.includes("favoritos.html")) {
     const contenedor = document.getElementById("favoritosContainer");
     let favoritos = JSON.parse(localStorage.getItem("favoritos")) || [];
@@ -199,44 +198,47 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
+    contenedor.innerHTML = "";
+
     favoritos.forEach(fav => {
       const article = document.createElement("article");
       article.className = "song";
- // Crear el botón de eliminar (❌)
-      const deleteBtn = document.createElement("button");
-      deleteBtn.className = "delete-btn";
-      deleteBtn.innerHTML = "❌";
-      deleteBtn.style.cursor = "pointer";
-      deleteBtn.style.border = "none";
-      deleteBtn.style.background = "none";
-      deleteBtn.style.fontSize = "18px";
-      deleteBtn.style.float = "right";
-      deleteBtn.title = "Quitar de favoritos";
+      article.dataset.id = fav.id;
 
-      // Título y enlace a la canción
-      const titulo = document.createElement("h3");
-      titulo.textContent = fav.titulo;
+      article.innerHTML = `
+        <button class="remove-fav" title="Eliminar de favoritos">✖</button>
+        <h3>${fav.titulo}</h3>
+        <div class="lyrics">${fav.letra}</div>
+        ${fav.audio_src ? `<audio class="song-link" controls src="${fav.audio_src}"></audio>` : ""}
+        <a href="${fav.deidad}.html#${fav.id.split('-')[1]}" class="song-link">
+          Ir a la canción
+        </a>
+      `;
 
-     
-
-      // Agregar todo al artículo
-      article.appendChild(deleteBtn);
-      article.appendChild(titulo);
       contenedor.appendChild(article);
+    });
 
-      // Evento para eliminar el favorito
-      deleteBtn.addEventListener("click", () => {
-        favoritos = favoritos.filter(f => f.id !== fav.id);
-        localStorage.setItem("favoritos", JSON.stringify(favoritos));
+    // 🎯 Escuchar clics en las X (botones de eliminar)
+    contenedor.addEventListener("click", (e) => {
+      if (e.target.classList.contains("remove-fav")) {
+        const article = e.target.closest("article");
+        const id = article.dataset.id;
+
+        // Eliminar visualmente
         article.remove();
 
-        // Si se vacía la lista, mostramos mensaje
+        // Eliminar del localStorage
+        favoritos = favoritos.filter(fav => fav.id !== id);
+        localStorage.setItem("favoritos", JSON.stringify(favoritos));
+
+        // Si ya no quedan favoritos, mostrar mensaje
         if (favoritos.length === 0) {
-          contenedor.innerHTML = "<p>No hay canciones favoritas aún ❤️</p>";
+          contenedor.innerHTML = "<p>No hay canciones favoritas aún... ❤️</p>";
         }
-      });
+      }
     });
   }
 });
+
 
 
