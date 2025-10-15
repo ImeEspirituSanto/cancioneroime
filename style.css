@@ -46,7 +46,7 @@ input#searchBar {
 }
 
 nav.navbar {
-  position: absolute;  /* fijo en la pantalla */
+  position: relative;  /* fijo en la pantalla */
   top: 0;           /* arriba de todo */
   left: 0;
   width: 100%;
