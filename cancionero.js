@@ -163,7 +163,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let favoritos = JSON.parse(localStorage.getItem("favoritos")) || [];
 
     if (favoritos.length === 0) {
-      contenedor.innerHTML = "<p>No hay canciones favoritas aún ❤️</p>";
+      contenedor.innerHTML = '<p class="favoritos-vacio">No hay canciones favoritas aún... ❤️</p>';
       return;
     }
 
@@ -199,7 +199,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // Si ya no quedan favoritos, mostrar mensaje
         if (favoritos.length === 0) {
-          contenedor.innerHTML = "<p class="favoritos-vacio">No hay canciones favoritas aún... ❤️</p>";
+          contenedor.innerHTML = "<p>No hay canciones favoritas aún... ❤️</p>";
         }
       }
     });
