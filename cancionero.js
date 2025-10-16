@@ -61,6 +61,7 @@ document.addEventListener("DOMContentLoaded", function () {
   scrollBtn.style.boxShadow = "0 2px 8px rgba(0, 0, 0, 0.3)";
   scrollBtn.style.transition = "background-color 0.3s ease, transform 0.2s ease";
   scrollBtn.style.zIndex = "1000";
+  scrollBtn.classList.add("no-dark");
 
   scrollBtn.addEventListener("mouseenter", function () {
     scrollBtn.style.transform = "scale(1.1)";
