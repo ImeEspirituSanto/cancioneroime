@@ -229,38 +229,26 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 document.addEventListener("DOMContentLoaded", function () {
+  // Buscar el nav (o header)
+  var nav = document.querySelector("nav") || document.querySelector("header");
+  if (!nav) return;
+
   // Crear botón de modo oscuro
   var darkModeBtn = document.createElement("button");
   darkModeBtn.id = "darkModeBtn";
   darkModeBtn.title = "Modo nocturno";
   darkModeBtn.innerHTML = "🌙";
 
-  // Estilos del botón (compatibles con Chrome 65)
-  darkModeBtn.style.position = "fixed";
-  darkModeBtn.style.bottom = "140px";
-  darkModeBtn.style.right = "20px";
-  darkModeBtn.style.backgroundColor = "#222";
-  darkModeBtn.style.color = "white";
+  // Estilos simples para integrarse en el nav
+  darkModeBtn.style.background = "none";
   darkModeBtn.style.border = "none";
-  darkModeBtn.style.borderRadius = "50%";
-  darkModeBtn.style.width = "45px";
-  darkModeBtn.style.height = "45px";
-  darkModeBtn.style.fontSize = "22px";
+  darkModeBtn.style.color = "white";
+  darkModeBtn.style.fontSize = "20px";
   darkModeBtn.style.cursor = "pointer";
-  darkModeBtn.style.boxShadow = "0 2px 8px rgba(0, 0, 0, 0.3)";
-  darkModeBtn.style.transition = "background-color 0.3s ease, transform 0.2s ease";
-  darkModeBtn.style.zIndex = "1000";
+  darkModeBtn.style.marginLeft = "10px";
 
-  // Efecto hover
-  darkModeBtn.addEventListener("mouseenter", function() {
-    darkModeBtn.style.transform = "scale(1.1)";
-  });
-  darkModeBtn.addEventListener("mouseleave", function() {
-    darkModeBtn.style.transform = "scale(1)";
-  });
-
-  // Insertar botón al body
-  document.body.appendChild(darkModeBtn);
+  // Insertar el botón dentro del nav (al final)
+  nav.appendChild(darkModeBtn);
 
   // Comprobar si el modo oscuro ya estaba guardado
   var body = document.body;
@@ -283,6 +271,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 });
+
 
 
 
