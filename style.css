@@ -51,6 +51,16 @@ body.dark-mode .floating-button {
 #autoScrollBtn.active {
   background-color: #27ae60 !important; /* verde activo */
 }
+/* Botón de autoscroll sin que se vea afectado por dark mode */
+.no-dark {
+  background-color: #c0392b !important; /* rojo inactivo */
+  color: white !important;               /* texto blanco */
+}
+
+.no-dark.active {
+  background-color: #27ae60 !important;  /* verde activo */
+  color: white !important;               /* texto blanco */
+}
 
 /* === Botón del modo nocturno === */
 #darkModeBtn {
