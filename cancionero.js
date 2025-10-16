@@ -83,10 +83,10 @@ document.addEventListener("DOMContentLoaded", function () {
   } else {
     autoScrollInterval = setInterval(() => {
       window.scrollBy({
-        top: 150,
+        top: 120,
         behavior: "smooth"
       });
-    }, 20000);
+    }, 18000);
     scrollBtn.style.backgroundColor = "#27ae60"; // verde activo
     scrollBtn.title = "Desactivar desplazamiento automático";
   }
