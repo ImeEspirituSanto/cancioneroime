@@ -67,6 +67,11 @@ body.dark-mode .floating-button {
 #darkModeBtn:hover {
   transform: scale(1.2);
 }
+body.dark-mode .chorus {
+  color: #cfe9ff !important;
+  font-weight: bold;
+  text-shadow: 0 0 6px rgba(207, 233, 255, 0.6);
+}
 
 
 header {
