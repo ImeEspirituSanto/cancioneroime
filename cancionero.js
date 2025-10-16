@@ -229,37 +229,44 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 document.addEventListener("DOMContentLoaded", function () {
-  // Buscar el nav (o header)
-  var nav = document.querySelector("nav") || document.querySelector("header");
+  const nav = document.querySelector("nav") || document.querySelector("header");
   if (!nav) return;
 
-  // Crear botón de modo oscuro
-  var darkModeBtn = document.createElement("button");
+  // Crear el botón de modo oscuro
+  const darkModeBtn = document.createElement("button");
   darkModeBtn.id = "darkModeBtn";
   darkModeBtn.title = "Modo nocturno";
   darkModeBtn.innerHTML = "🌙";
 
-  // Estilos simples para integrarse en el nav
-  darkModeBtn.style.background = "none";
-  darkModeBtn.style.border = "none";
-  darkModeBtn.style.color = "white";
-  darkModeBtn.style.fontSize = "20px";
-  darkModeBtn.style.cursor = "pointer";
-  darkModeBtn.style.marginLeft = "10px";
+  // Estilos base del botón
+  Object.assign(darkModeBtn.style, {
+    background: "none",
+    border: "none",
+    color: "white",
+    fontSize: "20px",
+    cursor: "pointer",
+    marginLeft: "auto",
+    marginRight: "15px",
+    display: "flex",
+    alignItems: "center",
+  });
 
-  // Insertar el botón dentro del nav (al final)
+  // Insertar el botón al final del nav (alineado a la derecha)
+  nav.style.display = "flex";
+  nav.style.alignItems = "center";
+  nav.style.justifyContent = "space-between";
   nav.appendChild(darkModeBtn);
 
-  // Comprobar si el modo oscuro ya estaba guardado
-  var body = document.body;
-  var modoGuardado = localStorage.getItem("modo");
+  // Verificar modo guardado
+  const body = document.body;
+  const modoGuardado = localStorage.getItem("modo");
   if (modoGuardado === "oscuro") {
     body.classList.add("dark-mode");
     darkModeBtn.innerHTML = "☀️";
   }
 
-  // Alternar modo nocturno
-  darkModeBtn.addEventListener("click", function() {
+  // Evento de cambio de modo
+  darkModeBtn.addEventListener("click", function () {
     body.classList.toggle("dark-mode");
 
     if (body.classList.contains("dark-mode")) {
