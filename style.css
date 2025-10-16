@@ -308,8 +308,6 @@ p.lyrics {
   text-align: left; /* Alineación a la izquierda */
   padding: 0; /* Sin padding */
   margin: 0; /* Sin márgenes */
-  color: #000;
-  text-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
 }
 
 /* Estilo para destacar el coro */
