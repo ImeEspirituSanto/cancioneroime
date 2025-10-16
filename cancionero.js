@@ -73,20 +73,24 @@ document.addEventListener("DOMContentLoaded", function () {
   document.body.appendChild(scrollBtn);
 
   var autoScrollInterval = null;
-  scrollBtn.addEventListener("click", function () {
-    if (autoScrollInterval) {
-      clearInterval(autoScrollInterval);
-      autoScrollInterval = null;
-      scrollBtn.style.backgroundColor = "#c0392b";
-      scrollBtn.title = "Activar desplazamiento automático";
-    } else {
-      scrollBtn.style.backgroundColor = "#27ae60";
-      scrollBtn.title = "Desactivar desplazamiento automático";
-      autoScrollInterval = setInterval(function () {
-        window.scrollBy(0, 150);
-      }, 20000);
-    }
-  });
+  scrollBtn.addEventListener("click", () => {
+  if (autoScrollInterval) {
+    clearInterval(autoScrollInterval);
+    autoScrollInterval = null;
+    scrollBtn.style.backgroundColor = "#c0392b"; // rojo inactivo
+    scrollBtn.title = "Activar desplazamiento automático";
+  } else {
+    autoScrollInterval = setInterval(() => {
+      window.scrollBy({
+        top: 150,
+        behavior: "smooth"
+      });
+    }, 20000);
+    scrollBtn.style.backgroundColor = "#27ae60"; // verde activo
+    scrollBtn.title = "Desactivar desplazamiento automático";
+  }
+});
+
 
   // ====== FAVORITOS ======
   var deidad = "otros";
