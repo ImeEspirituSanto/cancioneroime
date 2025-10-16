@@ -32,6 +32,16 @@ body.dark-mode .floating-button {
   background-color: #555 !important;
 }
 
+/* Botón de autoscroll → siempre conserva sus colores originales */
+/* NO modificar el autoscroll en modo oscuro */
+#autoScrollBtn {
+  /* background-color: #555 !important; */ /* BORRAR */
+}
+
+#autoScrollBtn.active {
+  background-color: #27ae60 !important; /* verde activo */
+}
+/* Botón de autoscroll sin que se vea afectado por dark mode */
 /* === EXCEPCIONES: estos NO cambian con el modo nocturno === */
 
 /* Corazones (favoritos) → mantienen su color original */
