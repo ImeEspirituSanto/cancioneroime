@@ -83,7 +83,7 @@ document.addEventListener("DOMContentLoaded", function () {
       scrollBtn.title = "Desactivar desplazamiento automático";
       autoScrollInterval = setInterval(function () {
         window.scrollBy(0, 150);
-      }, 25000);
+      }, 20000);
     }
   });
 
