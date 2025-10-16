@@ -43,10 +43,11 @@ body.dark-mode .floating-button {
 }
 
 /* Botón de autoscroll → siempre conserva sus colores originales */
+/* NO modificar el autoscroll en modo oscuro */
 #autoScrollBtn {
-  background-color: #c0392b !important; /* rojo inactivo */
-  color: white !important;
+  /* background-color: #555 !important; */ /* BORRAR */
 }
+
 #autoScrollBtn.active {
   background-color: #27ae60 !important; /* verde activo */
 }
