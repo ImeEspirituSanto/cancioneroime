@@ -83,7 +83,7 @@ document.addEventListener("DOMContentLoaded", function () {
   } else {
     autoScrollInterval = setInterval(() => {
       window.scrollBy({
-        top: 110,
+        top: 120,
         behavior: "smooth"
       });
     }, 18000);
