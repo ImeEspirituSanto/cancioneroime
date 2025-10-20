@@ -284,6 +284,81 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 });
+document.addEventListener("DOMContentLoaded", function () {
+  // Crear el botón para ir al h3 más cercano
+  var scrollToH3Btn = document.createElement("button");
+  scrollToH3Btn.id = "scrollToH3Btn";
+  scrollToH3Btn.title = "Ir al inicio de la canción";
+  scrollToH3Btn.innerHTML = "🎵"; // icono musical
+
+  // Estilos básicos del botón
+  scrollToH3Btn.style.position = "fixed";
+  scrollToH3Btn.style.bottom = "90px";
+  scrollToH3Btn.style.right = "20px";
+  scrollToH3Btn.style.backgroundColor = "#2980b9";
+  scrollToH3Btn.style.color = "#fff";
+  scrollToH3Btn.style.border = "none";
+  scrollToH3Btn.style.borderRadius = "50%";
+  scrollToH3Btn.style.width = "45px";
+  scrollToH3Btn.style.height = "45px";
+  scrollToH3Btn.style.fontSize = "22px";
+  scrollToH3Btn.style.cursor = "pointer";
+  scrollToH3Btn.style.boxShadow = "0 2px 8px rgba(0, 0, 0, 0.3)";
+  scrollToH3Btn.style.transition = "transform 0.2s ease";
+  scrollToH3Btn.style.zIndex = "1000";
+  scrollToH3Btn.style.display = "none";
+
+  // Animación al pasar el mouse
+  scrollToH3Btn.addEventListener("mouseenter", function () {
+    scrollToH3Btn.style.transform = "scale(1.1)";
+  });
+  scrollToH3Btn.addEventListener("mouseleave", function () {
+    scrollToH3Btn.style.transform = "scale(1)";
+  });
+
+  // Agregar el botón al body
+  document.body.appendChild(scrollToH3Btn);
+
+  // Mostrar/ocultar el botón según el scroll
+  window.addEventListener("scroll", function () {
+    if (window.scrollY > 400) {
+      scrollToH3Btn.style.display = "block";
+    } else {
+      scrollToH3Btn.style.display = "none";
+    }
+  });
+
+  // Función auxiliar para mover el scroll
+  function scrollTo(y) {
+    window.scrollTo(0, y);
+  }
+
+  // Al hacer clic, ir al <h3> más cercano hacia arriba
+  scrollToH3Btn.addEventListener("click", function () {
+    var headings = document.getElementsByTagName("h3");
+    var target = null;
+
+    for (var i = headings.length - 1; i >= 0; i--) {
+      var rect = headings[i].getBoundingClientRect();
+      var top = rect.top + window.pageYOffset;
+      if (top < window.scrollY - 10) { // el más cercano hacia arriba
+        target = headings[i];
+        break;
+      }
+    }
+
+    // Si no hay uno más arriba, usar el primero
+    if (!target && headings.length > 0) {
+      target = headings[0];
+    }
+
+    if (target) {
+      var offset = target.getBoundingClientRect().top + window.pageYOffset;
+      scrollTo(offset);
+    }
+  });
+});
+
 
 
 
