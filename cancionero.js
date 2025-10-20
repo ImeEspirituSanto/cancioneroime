@@ -299,9 +299,9 @@ document.addEventListener("DOMContentLoaded", function () {
   scrollToH3Btn.style.color = "#fff";
   scrollToH3Btn.style.border = "none";
   scrollToH3Btn.style.borderRadius = "50%";
-  scrollToH3Btn.style.width = "45px";
-  scrollToH3Btn.style.height = "45px";
-  scrollToH3Btn.style.fontSize = "22px";
+  scrollToH3Btn.style.width = "40px";
+  scrollToH3Btn.style.height = "40px";
+  scrollToH3Btn.style.fontSize = "18px";
   scrollToH3Btn.style.cursor = "pointer";
   scrollToH3Btn.style.boxShadow = "0 2px 8px rgba(0, 0, 0, 0.3)";
   scrollToH3Btn.style.transition = "transform 0.2s ease";
