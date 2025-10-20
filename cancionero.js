@@ -289,7 +289,7 @@ document.addEventListener("DOMContentLoaded", function () {
   var scrollToH3Btn = document.createElement("button");
   scrollToH3Btn.id = "scrollToH3Btn";
   scrollToH3Btn.title = "Ir al inicio de la canción";
-  scrollToH3Btn.innerHTML = "🎵"; // icono musical
+  scrollToH3Btn.innerHTML = "P"; // icono musical
 
   // Estilos básicos del botón
   scrollToH3Btn.style.position = "fixed";
