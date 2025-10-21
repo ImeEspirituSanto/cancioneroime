@@ -477,6 +477,12 @@ strong.chorus {
 #goToTitleBtn:hover {
   background-color: #34495e;
 }
+.no-audio-msg {
+  color: #ccc;
+  font-style: italic;
+  margin-top: 8px;
+  text-align: center;
+}
 
 /* Estilos para pantallas pequeñas */
 @media (max-width: 768px) {
