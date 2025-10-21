@@ -177,9 +177,12 @@ document.addEventListener("DOMContentLoaded", function () {
           '<div class="lyrics">' +
           fav.letra +
           "</div>" +
-          (fav.audio_src
-            ? '<audio class="song-link" controls src="' + fav.audio_src + '"></audio>'
-            : "");
+         (fav.audio_src
+         ? (navigator.onLine
+         ? '<audio class="song-link" controls src="' + fav.audio_src + '"></audio>'
+         : '<p class="no-audio-msg">🎵 Conéctate a internet para escuchar el audio</p>'
+         )
+     : "");
 
         contenedor.appendChild(article);
       }
