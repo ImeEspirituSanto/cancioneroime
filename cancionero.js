@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", function () {
-  // ====== BÚSQUEDA ======
   var searchBar = document.getElementById("searchBar");
   if (searchBar) {
     searchBar.addEventListener("input", function () {
@@ -17,15 +16,12 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
   }
-
-  // ====== BOTÓN SUBIR ======
   var floatingButton = document.createElement("button");
   floatingButton.id = "scrollToTop";
   floatingButton.className = "floating-button";
   floatingButton.innerHTML = '<i class="fas fa-arrow-up"></i>';
   floatingButton.onclick = scrollToTop;
   document.body.appendChild(floatingButton);
-
   window.addEventListener("scroll", function () {
     if (window.scrollY > 200) {
       floatingButton.style.display = "block";
@@ -41,8 +37,6 @@ document.addEventListener("DOMContentLoaded", function () {
       window.scrollTo(0, navTop);
     }
   }
-
-  // ====== AUTO SCROLL ======
   var scrollBtn = document.createElement("button");
   scrollBtn.classList.add("no-dark");
   scrollBtn.id = "autoScrollBtn";
@@ -62,8 +56,6 @@ document.addEventListener("DOMContentLoaded", function () {
   scrollBtn.style.boxShadow = "0 2px 8px rgba(0, 0, 0, 0.3)";
   scrollBtn.style.transition = "background-color 0.3s ease, transform 0.2s ease";
   scrollBtn.style.zIndex = "1000";
-  
-
   scrollBtn.addEventListener("mouseenter", function () {
     scrollBtn.style.transform = "scale(1.1)";
   });
@@ -78,7 +70,7 @@ document.addEventListener("DOMContentLoaded", function () {
   if (autoScrollInterval) {
     clearInterval(autoScrollInterval);
     autoScrollInterval = null;
-    scrollBtn.style.backgroundColor = "#c0392b"; // rojo inactivo
+    scrollBtn.style.backgroundColor = "#c0392b"; 
     scrollBtn.title = "Activar desplazamiento automático";
   } else {
     autoScrollInterval = setInterval(() => {
@@ -87,13 +79,11 @@ document.addEventListener("DOMContentLoaded", function () {
         behavior: "smooth"
       });
     }, 18000);
-    scrollBtn.style.backgroundColor = "#27ae60"; // verde activo
+    scrollBtn.style.backgroundColor = "#27ae60";
     scrollBtn.title = "Desactivar desplazamiento automático";
   }
 });
 
-
-  // ====== FAVORITOS ======
   var deidad = "otros";
   var url = window.location.href;
   if (url.indexOf("jesus") !== -1) deidad = "jesus";
@@ -152,8 +142,6 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     })();
   }
-
-  // ====== SECCIÓN FAVORITOS ======
   if (window.location.pathname.indexOf("favoritos.html") !== -1) {
     var contenedor = document.getElementById("favoritosContainer");
     var favoritosGuardados = JSON.parse(localStorage.getItem("favoritos")) || [];
@@ -208,7 +196,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
-  // ====== MENÚ HAMBURGUESA ======
   var navToggle = document.getElementById("navToggle");
   var navMenu = document.getElementById("navMenu");
 
@@ -241,13 +228,11 @@ document.addEventListener("DOMContentLoaded", function () {
   const nav = document.querySelector("nav") || document.querySelector("header");
   if (!nav) return;
 
-  // Crear el botón de modo oscuro
   const darkModeBtn = document.createElement("button");
   darkModeBtn.id = "darkModeBtn";
   darkModeBtn.title = "Modo nocturno";
   darkModeBtn.innerHTML = "🌙";
 
-  // Estilos base del botón
   Object.assign(darkModeBtn.style, {
     background: "none",
     border: "none",
@@ -260,13 +245,11 @@ document.addEventListener("DOMContentLoaded", function () {
     alignItems: "center",
   });
 
-  // Insertar el botón al final del nav (alineado a la derecha)
   nav.style.display = "flex";
   nav.style.alignItems = "center";
   nav.style.justifyContent = "space-between";
   nav.appendChild(darkModeBtn);
 
-  // Verificar modo guardado
   const body = document.body;
   const modoGuardado = localStorage.getItem("modo");
   if (modoGuardado === "oscuro") {
@@ -274,7 +257,6 @@ document.addEventListener("DOMContentLoaded", function () {
     darkModeBtn.innerHTML = "☀️";
   }
 
-  // Evento de cambio de modo
   darkModeBtn.addEventListener("click", function () {
     body.classList.toggle("dark-mode");
 
@@ -288,13 +270,10 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 document.addEventListener("DOMContentLoaded", function () {
-  // Crear el botón para ir al h3 más cercano
   var scrollToH3Btn = document.createElement("button");
   scrollToH3Btn.id = "scrollToH3Btn";
   scrollToH3Btn.title = "Ir al inicio de la canción";
-  scrollToH3Btn.innerHTML = "P"; // icono musical
-
-  // Estilos básicos del botón
+  scrollToH3Btn.innerHTML = "P"; l
   scrollToH3Btn.style.position = "fixed";
   scrollToH3Btn.style.bottom = "90px";
   scrollToH3Btn.style.right = "20px";
@@ -310,8 +289,6 @@ document.addEventListener("DOMContentLoaded", function () {
   scrollToH3Btn.style.transition = "transform 0.2s ease";
   scrollToH3Btn.style.zIndex = "1000";
   scrollToH3Btn.style.display = "none";
-
-  // Animación al pasar el mouse
   scrollToH3Btn.addEventListener("mouseenter", function () {
     scrollToH3Btn.style.transform = "scale(1.1)";
   });
@@ -319,10 +296,8 @@ document.addEventListener("DOMContentLoaded", function () {
     scrollToH3Btn.style.transform = "scale(1)";
   });
 
-  // Agregar el botón al body
   document.body.appendChild(scrollToH3Btn);
 
-  // Mostrar/ocultar el botón según el scroll
   window.addEventListener("scroll", function () {
     if (window.scrollY > 400) {
       scrollToH3Btn.style.display = "block";
@@ -331,12 +306,10 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
-  // Función auxiliar para mover el scroll
   function scrollTo(y) {
     window.scrollTo(0, y);
   }
 
-  // Al hacer clic, ir al <h3> más cercano hacia arriba
   scrollToH3Btn.addEventListener("click", function () {
     var headings = document.getElementsByTagName("h3");
     var target = null;
@@ -344,14 +317,13 @@ document.addEventListener("DOMContentLoaded", function () {
     for (var i = headings.length - 1; i >= 0; i--) {
       var rect = headings[i].getBoundingClientRect();
       var top = rect.top + window.pageYOffset;
-      if (top < window.scrollY - 10) { // el más cercano hacia arriba
+      if (top < window.scrollY - 10) { 
         target = headings[i];
         break;
       }
     }
 
-    // Si no hay uno más arriba, usar el primero
-    if (!target && headings.length > 0) {
+      if (!target && headings.length > 0) {
       target = headings[0];
     }
 
