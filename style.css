@@ -4,12 +4,10 @@ body {
   margin: 0;
   padding: 0px;
 }
-
 body.dark-mode {
   background-color: #111;
   color: #eee;
 }
-
 body.dark-mode header,
 body.dark-mode nav,
 body.dark-mode .song,
