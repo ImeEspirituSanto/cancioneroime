@@ -273,7 +273,7 @@ document.addEventListener("DOMContentLoaded", function () {
   var scrollToH3Btn = document.createElement("button");
   scrollToH3Btn.id = "scrollToH3Btn";
   scrollToH3Btn.title = "Ir al inicio de la canción";
-  scrollToH3Btn.innerHTML = "P"; l
+  scrollToH3Btn.innerHTML = "P";
   scrollToH3Btn.style.position = "fixed";
   scrollToH3Btn.style.bottom = "90px";
   scrollToH3Btn.style.right = "20px";
